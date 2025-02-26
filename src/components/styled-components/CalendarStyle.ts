@@ -42,6 +42,7 @@ export const Day = styled.div<{ isAbled: boolean; isBlank: boolean }>`
   pointer-events: ${({ isAbled }) => (isAbled ? "auto" : "none")}; // hover 막기
 
   &:hover {
-    background-color: ${({ isAbled }) => (isAbled ? "pink" : "inherit")};
+    background-color: ${({ isAbled }) =>
+      isAbled ? "rgb(252, 209, 216)" : "inherit"};
   }
 `;

@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { useMemo, useState } from "react";
+import { MonthButton } from "./styled-components/ButtonStyle";
 import {
   CalendarContainer,
   CalendarHeader,
@@ -68,14 +69,14 @@ export const Calendar = () => {
     <>
       <CalendarContainer>
         <CalendarHeader>
-          <button
+          <MonthButton
             onClick={() => calendar.previousMonth()}
             disabled={calendar.currentMonth.isSame(dayjs(), "month")}
           >
             이전달
-          </button>
+          </MonthButton>
           <h2>{calendar.currentMonth.format("YYYY년 MM월")}</h2>
-          <button
+          <MonthButton
             onClick={() => calendar.nextMonth()}
             disabled={calendar.currentMonth.isSame(
               dayjs().add(2, "month"),
@@ -83,7 +84,7 @@ export const Calendar = () => {
             )}
           >
             다음달
-          </button>
+          </MonthButton>
         </CalendarHeader>
 
         <Weekdays>
