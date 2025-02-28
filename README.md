@@ -8,3 +8,4 @@
 `npm install --save-dev @types/react-burger-menu`
 `npm install react-icons`
 `npm install dayjs`
+`npm install framer-motion`

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import styled from "styled-components";
-
 const Container = styled.div`
   max-width: 90%;
   margin: 0 auto;
   padding: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 `;
 
@@ -24,10 +23,7 @@ const Container = styled.div`
 //   border-radius: 10px;
 // `;
 
-const Content = styled.div`
-  flex: 2;
-  padding-left: 5%;
-`;
+const Content = styled.div``;
 
 const FAQItem = styled.div`
   padding: 10px 0;
@@ -42,13 +38,21 @@ const Question = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  font-weight: bold;
+  // font-weight: bold;
   cursor: pointer;
   color: #333;
   padding: 10px;
-  background: rgb(218, 204, 191);
-  color: rgb(80, 74, 68);
+  background: rgb(230, 220, 212);
+  color: #666;
+  width: 80vw;
+  max-width: 800px;
   border-radius: 5px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    background-color: rgb(169, 161, 154);
+    color: rgb(241, 235, 227);
+  }
 `;
 
 const Answer = styled.div<{ isOpen: boolean }>`
@@ -57,7 +61,20 @@ const Answer = styled.div<{ isOpen: boolean }>`
   line-height: 1.6;
   color: #555;
   display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  width: 80vw;
+  max-width: 800px;
   min-height: 60px;
+`;
+
+export const SubTitle = styled.div`
+  text-align: center;
+  font-family: "Diphylleia";
+  font-style: italic;
+  font-weight: bold;
+  color: rgb(135, 121, 108);
+  font-size: 1.7rem;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
 `;
 
 const faqData = [
@@ -88,7 +105,7 @@ const faqData = [
       "리터치는 필수가 아닌 개인의 선택입니다. 개인에 따라 탈각은 모두 다르게 진행되기 때문에 1차 시술 후 더 진하게 하고싶거나 수정할 부분이 있다고 느끼시면 리터치를 추천드립니다.",
   },
   {
-    question: "시술 불가",
+    question: "시술이 불가능한 경우도 있나요?",
     answer:
       "임산부, 수유 중인 분들은 호르몬 변화로 인해 색소가 제대로 자리 잡지 않을 수 있으며, 피부가 예민해질 가능성이 있어 시술을 권장하지 않습니다. 또한 6개월 이내 성형수술을 하신 분들은 꼭 사전에 말씀을 해주시고 병원 상담 후 예약 부탁드립니다.",
   },
@@ -112,7 +129,7 @@ export default function FAQ() {
         <Image src={img1} alt="shop" />
       </ImageWrapper> */}
       <Content>
-        자주 묻는 질문
+        <SubTitle>자주 묻는 질문</SubTitle>
         {faqData.map((faq, index) => (
           <FAQItem key={index}>
             <Question onClick={() => toggleFAQ(index)}>

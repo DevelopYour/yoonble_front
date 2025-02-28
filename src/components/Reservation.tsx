@@ -10,6 +10,21 @@ import {
   ServiceItem,
   ServiceItemContainer,
 } from "./styled-components/CheckStyle";
+import React from "react";
+import { SubTitle } from "./FAQ";
+import styled from "styled-components";
+
+const Container = styled.div`
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+
+const Contents = styled.div`
+  text-align: center;
+`;
 
 export default function Reservation() {
   const navigate = useNavigate();
@@ -37,32 +52,35 @@ export default function Reservation() {
   }, []);
 
   return (
-    <>
-      <img width={"300"} src={img1} alt="Logo" />
-      <ServiceItemContainer>
-        {artmakes.map((artmake) => (
-          <ServiceItem
-            key={artmake.id}
-            selected={selectedArts.includes(artmake)}
-            onClick={() => toggleSelection(artmake)}
-          >
-            {selectedArts.some((item) => item.id === artmake.id) ? (
-              <AiOutlineCheckSquare size={24} />
-            ) : (
-              <AiOutlineBorder size={24} />
-            )}
-            <span>
-              {artmake.name} ({artmake.duration}분 소요)
-            </span>
-          </ServiceItem>
-        ))}
-      </ServiceItemContainer>
-      <Button
-        onClick={() => navigate("/book")}
-        disabled={selectedArts.length === 0}
-      >
-        {selectedArts.length > 0 ? "예약하기" : "예약하실 시술을 선택해주세요"}
-      </Button>
-    </>
+    <Container>
+      <SubTitle>예약하기</SubTitle>
+      <Contents>
+        <img width={"300"} src={img1} alt="Logo" />
+        <ServiceItemContainer>
+          {artmakes.map((artmake) => (
+            <ServiceItem
+              key={artmake.id}
+              selected={selectedArts.includes(artmake)}
+              onClick={() => toggleSelection(artmake)}
+            >
+              {selectedArts.some((item) => item.id === artmake.id) ? (
+                <AiOutlineCheckSquare size={24} />
+              ) : (
+                <AiOutlineBorder size={24} />
+              )}
+              <span>
+                {artmake.name} ({artmake.duration}분 소요)
+              </span>
+            </ServiceItem>
+          ))}
+        </ServiceItemContainer>
+        <Button
+          onClick={() => navigate("/book")}
+          disabled={selectedArts.length === 0}
+        >
+          {selectedArts.length > 0 ? "예약하기" : "예약할 시술을 선택해 주세요"}
+        </Button>
+      </Contents>
+    </Container>
   );
 }
