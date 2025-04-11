@@ -12,6 +12,7 @@ export const BackgroundDiv = styled.div<MenuProps>`
   background-size: cover;
   overflow: hidden;
   height: ${(props) => (props.isDesktop ? "79vh" : "79vh")};
+  background-position: 100% 50%;
 `;
 
 export const Card = styled.div<MenuProps>`
