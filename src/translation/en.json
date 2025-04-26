@@ -35,13 +35,13 @@
     },
     "shop": {
         "about": {
-            "description": "我们的高端工作室融合了世界一流的设计专长与精湛的艺术技巧。由专业化妆师领衔，为每位顾客量身打造专属设计，突出个人独特魅力。体验无与伦比的品质与精细的工艺。"
+            "description": "Yoonble is a premium art makeup studio known for its world-class design sense and precision techniques. Operated by a former professional makeup artist, we offer customized designs tailored to each client's unique features. With exceptional quality and meticulous attention to detail, we bring out your own natural and harmonious beauty."
         },
         "design": {
-            "description": "我们的首席艺术家亲自把控每一个环节，从咨询到最终定妆，力求完美。通过分析面部结构与美学特征，打造最适合您的专属设计。凭借专业技巧与对细节的极致追求，呈现优雅和谐的效果。"
+            "description": "Our head artist personally handles every step of the process — from one-on-one consultations to design and procedure. Through precise analysis that considers your facial structure and unique character, we propose designs that suit you best. With an aesthetic approach that values detail and distinguished technical expertise, we promise exceptional, high-quality results."
         },
         "reservation": {
-            "description": "工作室位于江南豪华顶层公寓，为您提供私密且惬意的体验环境。在宁静舒适的氛围中，享受顶级服务。我们采用预约制，确保每位客户都能获得个性化关怀。交通便利，门前即有机场直达巴士站。"
+            "description": "Our art makeup studio is privately operated in a top-floor penthouse in Gangnam. Experience premium treatments in a relaxing, healing space through our professional one-on-one personalized service. Convenient access is available via airport buses departing from Incheon International Airport, ensuring a comfortable journey to our studio."
         },
         "title": "One-on-One Service"
     },
